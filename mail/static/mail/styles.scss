@@ -1,0 +1,189 @@
+$light-gray: #f3f3f3;
+$dark-gray: #a7a7a7;
+$off-black: #3d3d3d;
+$light-blue:#71f3da;
+$hover-blue:#92ffe7;
+
+
+$small-font-size: 12px;
+$medium-font-size: 18px;
+$regular-font-size:24px;
+$big-font-size:30px;
+$small-header-font-size: 42px;
+$big-header-font-size: 60px;
+
+textarea {
+    min-height: 400px;
+}
+
+#top-nav {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $light-gray;
+    padding: 0 20px;
+    &-logo{
+        font-size: $small-header-font-size;
+        font-weight:bold;
+    }
+    &-right{
+        
+        padding: 0 20px;
+        border-radius:10px;
+        text-align:center;
+        p{
+            padding:0;
+            margin:0;
+            font-size: $medium-font-size;
+        }
+        a{
+            display:block;
+            width:100%;
+            text-align:center;
+            font-size: $medium-font-size;
+            
+            
+        }
+    }
+    &-user{
+       font-size: $regular-font-size; 
+       padding:0;
+            margin:0;
+    }
+}
+.body-container{
+    display:flex;
+    padding: 20px;
+
+    .left-nav{
+        flex: 1;
+        border-right: 1px solid black;
+        padding-right: 20px;
+        #compose{
+            font-size:$medium-font-size;
+            padding: 5px 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: $light-blue;
+            width:100%;
+            &:hover{
+                background-color: $hover-blue;
+            }
+            &:focus{
+                outline:none;
+            }
+        }
+        p{
+            text-align:center;
+            font-size: $medium-font-size
+        }
+        ul{
+            list-style:none;
+            padding:0;
+            margin:10px 0;
+            li{
+                background-color:transparent;
+                
+               
+            }
+            button{
+                border:none;
+                margin-bottom: 4px;
+                background-color:$light-gray;
+                width:100%;
+                text-align:left;
+                padding: 10px;
+                font-size: $medium-font-size;
+                &:hover{
+                    background-color: $dark-gray;
+                }
+
+                
+                &:focus{
+                    outline:none;
+                    border:none;
+                }
+            }
+            .active{
+                text-align:right;
+                font-weight:bold;
+                background-color: $light-blue;
+                color:$off-black;
+
+                &:hover{
+                    background-color: $hover-blue;
+                }
+            }
+        }
+    }
+    #emails-view{
+        flex:9;
+        padding: 0 30px;
+        max-width: 90%;
+
+        .emails-list{
+            list-style:none;
+            padding:0;
+            .email-item{
+                font-size: $medium-font-size;
+                display: grid;
+                grid-template-columns: 1fr 7fr 2fr;
+                justify-content:space-between;
+                overflow:hidden;
+                font-weight: bold;
+                padding:12px 0;
+                p{
+                    margin:0;
+                    display:inline;
+                }
+                &-name{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    display: block;
+                    text-overflow: ellipsis;
+                    
+                }
+                &-subject{
+                    
+                    padding: 0 20px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    display: block;
+                    text-overflow: ellipsis;
+            
+                }
+                &-date{
+                   
+                }
+            }
+        }
+    }
+}
+
+#compose-view{
+    
+    width:50%;
+    position: absolute;
+    right:10px;
+    bottom:0;
+    background-color:$light-gray;
+    padding: 20px;
+    box-shadow: -8px -7px 18px 0px #0000003d;
+    transition: display 0.5s;
+
+    .form-title{
+        display:flex;
+        justify-content: space-between;
+    
+        p{
+            font-size: $regular-font-size;
+            font-weight: bold;
+            color: $dark-gray;
+            &:hover{
+                color: black;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
