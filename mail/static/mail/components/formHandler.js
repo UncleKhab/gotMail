@@ -1,23 +1,24 @@
 import {load_mailbox} from "../inbox.js"
+
+
 export function handleSubmit(e){
     // retrieves data from the submitted form
     e.preventDefault()
     const obj = retrieveFormData();
     postEmailToApi(obj)
-  }
+}
   
 export function retrieveFormData(){
 // Retrieves the submitted form data and returns an object with the data.
+    const recipients = document.getElementById("compose-recipients").value
+    const subject = document.getElementById("compose-subject").value
+    const body = document.getElementById("compose-body").value
 
-const recipients = document.getElementById("compose-recipients").value
-const subject = document.getElementById("compose-subject").value
-const body = document.getElementById("compose-body").value
-
-return {
-    recipients: recipients,
-    subject: subject,
-    body: body
-}
+    return {
+        recipients: recipients,
+        subject: subject,
+        body: body
+    }
 }
   
   

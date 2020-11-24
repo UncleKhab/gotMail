@@ -1,5 +1,3 @@
-
-
 export function createEmailsList(emailsArray){
     let retString = emailsArray.map(item => {
         return(
@@ -10,6 +8,7 @@ export function createEmailsList(emailsArray){
             </li>`
         )
     }).join('')
+    retString = `<ul class="emails-list">` + retString + `</ul>`
     return retString;
     
 }

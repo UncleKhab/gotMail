@@ -12,6 +12,10 @@ $big-font-size:30px;
 $small-header-font-size: 42px;
 $big-header-font-size: 60px;
 
+
+*, body{
+    box-sizing: border-box;
+}
 textarea {
     min-height: 400px;
 }
@@ -118,20 +122,28 @@ textarea {
     }
     #emails-view{
         flex:9;
-        padding: 0 30px;
+        padding: 0 ;
         max-width: 90%;
-
+        #list-title{
+            padding:0 30px
+        }
         .emails-list{
             list-style:none;
-            padding:0;
+            padding: 0;
             .email-item{
+                padding:10px 30px;
                 font-size: $medium-font-size;
                 display: grid;
                 grid-template-columns: 1fr 7fr 2fr;
                 justify-content:space-between;
                 overflow:hidden;
                 font-weight: bold;
-                padding:12px 0;
+                
+
+                &:hover{
+                    border:1px solid $dark-gray;
+                    cursor: pointer;
+                }
                 p{
                     margin:0;
                     display:inline;
@@ -151,9 +163,6 @@ textarea {
                     display: block;
                     text-overflow: ellipsis;
             
-                }
-                &-date{
-                   
                 }
             }
         }
@@ -187,3 +196,45 @@ textarea {
     }
 }
 
+#display-area{
+    
+    .email-header{
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+        padding: 0 30px;
+        p{
+            margin:0;
+        }
+        &-right{
+            display:flex;
+            align-items: center;
+            button{
+                margin-left: 10px;
+                border:none;
+                padding: 2px 10px;
+                background-color: $light-gray;
+                font-weight:bold;
+                &:hover{
+                    background-color:$dark-gray;
+                }
+                &:focus{
+                    outline:none;
+                }
+            }
+        }
+    }
+
+    .email-body{
+        padding: 50px 30px;
+        background-color: $light-gray;
+        margin-top:20px;
+        font-size: $medium-font-size;
+        p{
+            width:80%;
+            margin: auto;
+            background-color:white;
+            padding: 20px 40px;
+        }
+    }
+}

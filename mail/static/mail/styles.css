@@ -1,3 +1,8 @@
+*, body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 textarea {
   min-height: 400px;
 }
@@ -127,8 +132,12 @@ textarea {
   -webkit-box-flex: 9;
       -ms-flex: 9;
           flex: 9;
-  padding: 0 30px;
+  padding: 0;
   max-width: 90%;
+}
+
+.body-container #emails-view #list-title {
+  padding: 0 30px;
 }
 
 .body-container #emails-view .emails-list {
@@ -137,6 +146,7 @@ textarea {
 }
 
 .body-container #emails-view .emails-list .email-item {
+  padding: 10px 30px;
   font-size: 18px;
   display: -ms-grid;
   display: grid;
@@ -147,7 +157,11 @@ textarea {
           justify-content: space-between;
   overflow: hidden;
   font-weight: bold;
-  padding: 12px 0;
+}
+
+.body-container #emails-view .emails-list .email-item:hover {
+  border: 1px solid #a7a7a7;
+  cursor: pointer;
 }
 
 .body-container #emails-view .emails-list .email-item p {
@@ -201,5 +215,61 @@ textarea {
 #compose-view .form-title p:hover {
   color: black;
   cursor: pointer;
+}
+
+#display-area .email-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 30px;
+}
+
+#display-area .email-header p {
+  margin: 0;
+}
+
+#display-area .email-header-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#display-area .email-header-right button {
+  margin-left: 10px;
+  border: none;
+  padding: 2px 10px;
+  background-color: #f3f3f3;
+  font-weight: bold;
+}
+
+#display-area .email-header-right button:hover {
+  background-color: #a7a7a7;
+}
+
+#display-area .email-header-right button:focus {
+  outline: none;
+}
+
+#display-area .email-body {
+  padding: 50px 30px;
+  background-color: #f3f3f3;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+#display-area .email-body p {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  padding: 20px 40px;
 }
 /*# sourceMappingURL=styles.css.map */
