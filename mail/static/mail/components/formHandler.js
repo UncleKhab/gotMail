@@ -5,7 +5,7 @@ export function handleSubmit(e){
     // retrieves data from the submitted form
     e.preventDefault()
     const obj = retrieveFormData();
-    postEmailToApi(obj)
+    postRequestToApi(obj)
 }
   
 export function retrieveFormData(){
@@ -20,9 +20,7 @@ export function retrieveFormData(){
         body: body
     }
 }
-  
-  
-export function postEmailToApi(obj){
+export function postRequestToApi(obj){
 //Function to Post Email to Api , pass in an object with the required format! 
 //Object example : 
 // {

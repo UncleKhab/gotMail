@@ -1,4 +1,5 @@
 export function createEmailsList(emailsArray){
+    let emailContainer = document.querySelector("#display-area")
     let retString = emailsArray.map(item => {
         return(
             `<li class="email-item" data-id=${item.id} id=${item.id}>
@@ -9,6 +10,5 @@ export function createEmailsList(emailsArray){
         )
     }).join('')
     retString = `<ul class="emails-list">` + retString + `</ul>`
-    return retString;
-    
+    emailContainer.innerHTML = retString;
 }
