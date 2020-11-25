@@ -1,4 +1,4 @@
-export function getRequestFromApi(query, loader, callback){
+export function getRequestFromApi(query, loader, callback, mailbox){
     let status;
     fetch(`emails/${query}`)
     .then(response => {
@@ -6,7 +6,7 @@ export function getRequestFromApi(query, loader, callback){
       return response.json()
     })
     .then(response => {
-      loader(response)
+      mailbox ? loader(response, mailbox) : loader(response, query);
       callback()
     })
   }

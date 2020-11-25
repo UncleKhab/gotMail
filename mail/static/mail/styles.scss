@@ -3,9 +3,10 @@ $dark-gray: #a7a7a7;
 $off-black: #3d3d3d;
 $light-blue:#71f3da;
 $hover-blue:#92ffe7;
+$dark-blue:#1571fc;
 
 
-$small-font-size: 12px;
+$small-font-size: 14px;
 $medium-font-size: 18px;
 $regular-font-size:24px;
 $big-font-size:30px;
@@ -61,6 +62,7 @@ textarea {
 
     .left-nav{
         flex: 1;
+        min-width:10%;
         border-right: 1px solid black;
         padding-right: 20px;
         #compose{
@@ -125,7 +127,12 @@ textarea {
         padding: 0 ;
         max-width: 90%;
         #list-title{
-            padding:0 30px
+            padding:0 30px;
+            &-counter{
+                color: $dark-blue;
+                font-size: $medium-font-size;
+                padding-left: 10px;
+            }
         }
         .emails-list{
             list-style:none;
@@ -138,10 +145,10 @@ textarea {
                 justify-content:space-between;
                 overflow:hidden;
                 font-weight: bold;
-                
-
+                color:$dark-blue;
+                margin-bottom: 2px;
                 &:hover{
-                    border:1px solid $dark-gray;
+                    outline:1px solid $dark-gray;
                     cursor: pointer;
                 }
                 p{
@@ -162,8 +169,14 @@ textarea {
                     overflow: hidden;
                     display: block;
                     text-overflow: ellipsis;
-            
                 }
+                &-date{
+                    text-align:right;
+                }
+            }
+            .opened{
+                color: $off-black;
+                background-color: $light-gray;
             }
         }
     }
@@ -197,7 +210,8 @@ textarea {
 }
 
 #display-area{
-    
+    height: 80vh;
+    overflow-y: scroll;
     .email-header{
         display:flex;
         justify-content:space-between;
@@ -235,7 +249,19 @@ textarea {
             margin: auto;
             background-color:white;
             padding: 20px 40px;
-            overflow-wrap: break-word;
+            overflow-wrap: anywhere;
+            white-space: pre-wrap;
         }
     }
+}
+
+strong{
+    width: 100%;
+    display: block;
+    font-size: $small-font-size;
+    background-color: #d9d9d9;
+    font-weight: bold;
+    padding: 10px;
+    max-height: 30vh;
+    overflow-y: scroll;
 }

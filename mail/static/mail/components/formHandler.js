@@ -12,6 +12,7 @@ export function retrieveFormData(){
     const recipients = document.getElementById("compose-recipients").value
     const subject = document.getElementById("compose-subject").value
     const body = document.getElementById("compose-body").value
+    console.log(document.getElementById("compose-body").value)
 
     return {
         recipients: recipients,
