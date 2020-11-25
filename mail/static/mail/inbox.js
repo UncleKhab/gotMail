@@ -1,9 +1,5 @@
 import {handleSubmit} from "./components/formHandler.js"
-import {createEmailsList} from "./components/createEmailList.js"
-import {getRequestFromApi} from "./components/getRequestFromApi.js"
-import {handleOpenEmail, handleMailboxButtonChange} from "./components/eventHandlers.js"
-import {listEventListeners, removeMultipleEventListeners} from "./components/eventListeners.js"
-
+import {handleMailBoxChange} from "./components/eventHandlers.js"
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -36,7 +32,7 @@ export function load_mailbox(mailbox) {
   document.querySelector('#compose-view').style.display = 'none';
   // Show the mailbox name
   document.querySelector('#list-title').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>` ;
-  removeMultipleEventListeners(".email-item", 'click', handleOpenEmail)
-  getRequestFromApi(mailbox, createEmailsList, listEventListeners)
-  handleMailboxButtonChange(mailbox, "add")
+  handleMailBoxChange(mailbox)
+  
+  
 }

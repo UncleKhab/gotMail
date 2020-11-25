@@ -1,6 +1,5 @@
 import {load_mailbox} from "../inbox.js"
 
-
 export function handleSubmit(e){
     // retrieves data from the submitted form
     e.preventDefault()

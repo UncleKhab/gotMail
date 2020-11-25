@@ -16,8 +16,6 @@ function emailFormatter(email){
 }
 
 function createEmailDetailView(email){
-  removeMultipleEventListeners(".email-item", 'click', handleOpenEmail)
-  handleMailboxButtonChange(0, "remove")
   let emailContainer = document.querySelector("#display-area")
   document.querySelector("#list-title").innerHTML = `${email.subject}`
   emailContainer.innerHTML = emailFormatter(email)
