@@ -2,19 +2,16 @@ export function createEmailsList(emailsArray, mailbox){
     let emailContainer = document.querySelector("#display-area")
     let title = document.querySelector('#list-title').firstChild;
     let unreadCount = 0;
-    let emailItemClasses =""
+    
     let retString = emailsArray.map(item => {
+        let emailItemClasses ="email-item opened"
         let emailDisplayName = mailbox === "sent" ? item.recipients : item.sender;
         // let emailItemClasses = item.read ? "email-item opened" : {unreadCount++; return "email-item"};
-        if(item.read){
-            emailItemClasses = "email-item opened"
-        }else{
-            emailItemClasses = "email-item";
-            unreadCount++;
+        if(!item.read && mailbox ==="inbox"){
+            emailItemClasses = "email-item"
+            unreadCount++
         }
-        if(mailbox === "sent"){
-            emailItemClasses = "email-item opened"
-        }
+
         return(
             `<li class="${emailItemClasses}" data-id=${item.id} data-mailbox=${mailbox} id=${item.id}>
                 <p class="email-item-name">${emailDisplayName}</p>

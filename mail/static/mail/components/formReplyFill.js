@@ -24,9 +24,9 @@ function bodyFormatter(sender){
     let date = document.querySelector('#email-date').innerText;
     reply ? console.log(reply) : console.log("not here")
     if(reply){
-        return `<strong>`+reply.innerHTML + `<br class="lineBreaker"><br><br><br>Reply: ${sender} --------------- At: ${date}<br>` + document.querySelector("#email-body").innerHTML.split("</strong>")[1].trim() + `</strong>`
+        return `<strong>`+reply.innerHTML + `<br><br><br><br>---------------On ${date} ${sender} wrote:<br>` + document.querySelector("#email-body").innerHTML.split("</strong>")[1].trim() + `</strong>`
     }else{
-        return `<strong>From: ${sender} --------------- At: ${date}<br>` + document.querySelector("#email-body").innerText + '</strong>'
+        return `<strong>---------------On ${date} ${sender} wrote:<br>` + document.querySelector("#email-body").innerText + '</strong>'
     }
     
 }
