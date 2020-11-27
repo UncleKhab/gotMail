@@ -1,9 +1,23 @@
-$light-gray: #f3f3f3;
 $dark-gray: #a7a7a7;
-$off-black: #3d3d3d;
 $light-blue:#71f3da;
 $hover-blue:#92ffe7;
 $dark-blue:#1571fc;
+//COLORS
+$off-white: #FEFEFE;
+$light-gray: #EFEFEF;
+$medium-gray: #BFBFBF;
+$dark-gray: #787878;
+$off-black: #242424;
+$dark-primary: #1D0147;
+$primary: #581Ab7;
+$primary-light: #946ece;
+$error: #F02500;
+$message: #BCF424;
+$secondary-gray:#ABCBF5;
+$secondary-gray-pale:#64A2F2;
+$secondary-bright: #09E8C2;
+$secondary-pale: #00A2B5;
+$secondary:#217CF2;
 
 
 $small-font-size: 14px;
@@ -16,112 +30,95 @@ $big-header-font-size: 60px;
 
 *, body{
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    margin:0;
+    padding:0;
+}
+p{
+    margin:0;
+    padding:0;
 }
 textarea {
     min-height: 400px;
 }
 
-#top-nav {
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: $light-gray;
-    padding: 0 20px;
-    &-logo{
-        font-size: $small-header-font-size;
-        font-weight:bold;
-    }
-    &-right{
-        
-        padding: 0 20px;
-        border-radius:10px;
-        text-align:center;
-        p{
-            padding:0;
-            margin:0;
-            font-size: $medium-font-size;
-        }
-        a{
-            display:block;
-            width:100%;
-            text-align:center;
-            font-size: $medium-font-size;
-            
-            
-        }
-    }
-    &-user{
-       font-size: $regular-font-size; 
-       padding:0;
-            margin:0;
-    }
-}
+
 .body-container{
     display:flex;
-    padding: 20px;
-
-    .left-nav{
-        flex: 1;
-        min-width:10%;
-        border-right: 1px solid black;
-        padding-right: 20px;
-        #compose{
-            font-size:$medium-font-size;
-            padding: 5px 20px;
-            border: none;
-            border-radius: 10px;
-            background-color: $light-blue;
-            width:100%;
-            &:hover{
-                background-color: $hover-blue;
-            }
-            &:focus{
-                outline:none;
-            }
+    .nav-bar{
+        display:block;
+        width:250px;
+        hr{
+            margin:20px 0;
         }
-        p{
-            text-align:center;
-            font-size: $medium-font-size
-        }
-        ul{
-            list-style:none;
-            padding:0;
+        &-user{
             margin:10px 0;
-            li{
-                background-color:transparent;
+            text-align:center;
+            &-char{
+                background-color:$primary;
+                display:inline-block;
+                padding: 15px;
+                border-radius: 50%;
+                box-shadow: 5px 1px 3px 0px #00000038;
+                cursor: pointer;
+                transition: background-color 0.2s ease-in;
                 
-               
-            }
-            button{
-                border:none;
-                margin-bottom: 4px;
-                background-color:$light-gray;
-                width:100%;
-                text-align:left;
-                padding: 10px;
-                font-size: $medium-font-size;
                 &:hover{
-                    background-color: $dark-gray;
+                    background-color:$primary-light;
                 }
+                p{
+                    color:$off-white;
 
-                
-                &:focus{
-                    outline:none;
-                    border:none;
+                    font-size: 40px;
+                    font-weight: bold;
+                    line-height:0.7;
                 }
             }
-            .active{
-                text-align:right;
-                font-weight:bold;
-                background-color: $light-blue;
-                color:$off-black;
+            &-name{
+                font-size: 20px;
+            }
+        }
 
-                &:hover{
-                    background-color: $hover-blue;
+        .nav{
+            display:block;
+            &-compose{
+                width: 80%;
+                margin: auto;
+                #compose{
+                    
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: $off-white;
+                    width: 100%;
+                    border: none;
+                    padding: 5px;
+                    border-radius: 10px;
+                    box-shadow: 5px 0px 5px #0000001f;
+                    background-color: $secondary;
+                    display:flex;
+                    justify-content:center;
+                    align-items: center;
+                    cursor: pointer;
+                    transition: background-color 0.2s ease-in;
+                    &:focus{
+                        outline:none;
+                    }
+                    &:hover{
+                        background-color:$secondary-gray-pale;
+                    }
+                    img{
+                        height:35px;
+                        color: $off-white;
+                    }
+                    p{
+                        display:inline-block;
+                        font-family: 'Roboto', sans-serif!important ;
+                    }
                 }
             }
         }
     }
+    
     #emails-view{
         flex:9;
         padding: 0 ;

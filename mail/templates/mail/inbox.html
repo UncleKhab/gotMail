@@ -2,32 +2,47 @@
 {% load static %}
 
 {% block body %}
-    <div id="top-nav">
-        <h2 id="top-nav-logo">GOTmail</h2>
-        <div id="top-nav-right">
-            <p>Signed in as:</p>
-            <h2 id="top-nav-user">{{ request.user.email }}</h2>
-            <a href="{% url 'logout' %}">Log Out</a>
+ 
+<div class="body-container">
+    <div class="nav-bar">
+        <div class="nav-bar-user">
+            <div class="nav-bar-user-char"><p id="user-char">U</p></div>
+            <div class="nav-bar-user-name"><p id="user-name">Username</p></div>
+        </div>
+        <hr>
+        <div class="nav">
+            <div class="nav-compose">
+                <button id="compose">
+                    <img src="{% static 'mail/icons/add_circle_outline-24px.svg' %}"/>
+                    <p>New Message</p>   
+                </button>
+            </div>
+            <div class="nav-mailbox">
+                <h2>Mailbox</h2>
+                <button class="nav-mailbox-button" id="inbox">
+                    <img src="{% static 'mail/icons/inbox-24px.svg' %}">
+                    <p>Inbox</p>
+                </button>
+                <button class="nav-mailbox-button" id="sent">
+                    <img src="{% static 'mail/icons/send-24px.svg' %}">
+                    <p>Sent</p>
+                </button>
+                <button class="nav-mailbox-button" id="archive">
+                    <img src="{% static 'mail/icons/archive-24px.svg' %}">
+                    <p>Archive</p>
+                </button>
+            </div>
+        </div>
+        <hr>
+        <div class="nav-bar-footer">
+            <a href="{% url 'logout' %}">Logout</a>
         </div>
     </div>
-    
+        
     
 
-    
-    <div class="body-container">
-        <div class="left-nav">
-            <button id="compose">Compose</button>
-            <hr>
-            <p>MailBox</p>
-            <ul id="mailbox-buttons">
-                <li><button class="mailbox-btn active" id="inbox">Inbox</button></li>
-                <li><button class="mailbox-btn" id="sent">Sent</button></li>
-                <li><button class="mailbox-btn" id="archive">Archived</button></li>
-            </ul>
-        </div>
-
-        <div id="emails-view">
-            <h3 id="list-title">The subject of the thing</h3>
+    <div id="emails-view">
+        <h3 id="list-title">The subject of the thing</h3>
             <hr>
             <div id="display-area">
                 <div class="email-header">
@@ -38,9 +53,9 @@
                         <button>Reply</button>
                     </div>
                 </div>
-                <div class="email-body">
-                    <p></p>
-                </div>
+            <div class="email-body">
+                <p></p>
+            </div>
             </div>
             
         </div>

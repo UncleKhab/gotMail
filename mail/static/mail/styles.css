@@ -1,132 +1,117 @@
 *, body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 textarea {
   min-height: 400px;
 }
 
-#top-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #f3f3f3;
-  padding: 0 20px;
-}
-
-#top-nav-logo {
-  font-size: 42px;
-  font-weight: bold;
-}
-
-#top-nav-right {
-  padding: 0 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-#top-nav-right p {
-  padding: 0;
-  margin: 0;
-  font-size: 18px;
-}
-
-#top-nav-right a {
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-size: 18px;
-}
-
-#top-nav-user {
-  font-size: 24px;
-  padding: 0;
-  margin: 0;
-}
-
 .body-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 20px;
 }
 
-.body-container .left-nav {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  min-width: 10%;
-  border-right: 1px solid black;
-  padding-right: 20px;
+.body-container .nav-bar {
+  display: block;
+  width: 250px;
 }
 
-.body-container .left-nav #compose {
-  font-size: 18px;
-  padding: 5px 20px;
-  border: none;
-  border-radius: 10px;
-  background-color: #71f3da;
-  width: 100%;
+.body-container .nav-bar hr {
+  margin: 20px 0;
 }
 
-.body-container .left-nav #compose:hover {
-  background-color: #92ffe7;
-}
-
-.body-container .left-nav #compose:focus {
-  outline: none;
-}
-
-.body-container .left-nav p {
-  text-align: center;
-  font-size: 18px;
-}
-
-.body-container .left-nav ul {
-  list-style: none;
-  padding: 0;
+.body-container .nav-bar-user {
   margin: 10px 0;
+  text-align: center;
 }
 
-.body-container .left-nav ul li {
-  background-color: transparent;
+.body-container .nav-bar-user-char {
+  background-color: #581Ab7;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 50%;
+  -webkit-box-shadow: 5px 1px 3px 0px #00000038;
+          box-shadow: 5px 1px 3px 0px #00000038;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
 }
 
-.body-container .left-nav ul button {
-  border: none;
-  margin-bottom: 4px;
-  background-color: #f3f3f3;
-  width: 100%;
-  text-align: left;
-  padding: 10px;
-  font-size: 18px;
+.body-container .nav-bar-user-char:hover {
+  background-color: #946ece;
 }
 
-.body-container .left-nav ul button:hover {
-  background-color: #a7a7a7;
-}
-
-.body-container .left-nav ul button:focus {
-  outline: none;
-  border: none;
-}
-
-.body-container .left-nav ul .active {
-  text-align: right;
+.body-container .nav-bar-user-char p {
+  color: #FEFEFE;
+  font-size: 40px;
   font-weight: bold;
-  background-color: #71f3da;
-  color: #3d3d3d;
+  line-height: 0.7;
 }
 
-.body-container .left-nav ul .active:hover {
-  background-color: #92ffe7;
+.body-container .nav-bar-user-name {
+  font-size: 20px;
+}
+
+.body-container .nav-bar .nav {
+  display: block;
+}
+
+.body-container .nav-bar .nav-compose {
+  width: 80%;
+  margin: auto;
+}
+
+.body-container .nav-bar .nav-compose #compose {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FEFEFE;
+  width: 100%;
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 0px 5px #0000001f;
+          box-shadow: 5px 0px 5px #0000001f;
+  background-color: #217CF2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+}
+
+.body-container .nav-bar .nav-compose #compose:focus {
+  outline: none;
+}
+
+.body-container .nav-bar .nav-compose #compose:hover {
+  background-color: #64A2F2;
+}
+
+.body-container .nav-bar .nav-compose #compose img {
+  height: 35px;
+  color: #FEFEFE;
+}
+
+.body-container .nav-bar .nav-compose #compose p {
+  display: inline-block;
+  font-family: "Roboto", sans-serif !important;
 }
 
 .body-container #emails-view {
@@ -169,7 +154,7 @@ textarea {
 }
 
 .body-container #emails-view .emails-list .email-item:hover {
-  outline: 1px solid #a7a7a7;
+  outline: 1px solid #787878;
   cursor: pointer;
 }
 
@@ -198,8 +183,8 @@ textarea {
 }
 
 .body-container #emails-view .emails-list .opened {
-  color: #3d3d3d;
-  background-color: #f3f3f3;
+  color: #242424;
+  background-color: #EFEFEF;
 }
 
 #compose-view {
@@ -207,7 +192,7 @@ textarea {
   position: absolute;
   right: 10px;
   bottom: 0;
-  background-color: #f3f3f3;
+  background-color: #EFEFEF;
   padding: 20px;
   -webkit-box-shadow: -8px -7px 18px 0px #0000003d;
           box-shadow: -8px -7px 18px 0px #0000003d;
@@ -227,7 +212,7 @@ textarea {
 #compose-view .form-title p {
   font-size: 24px;
   font-weight: bold;
-  color: #a7a7a7;
+  color: #787878;
 }
 
 #compose-view .form-title p:hover {
@@ -270,12 +255,12 @@ textarea {
   margin-left: 10px;
   border: none;
   padding: 2px 10px;
-  background-color: #f3f3f3;
+  background-color: #EFEFEF;
   font-weight: bold;
 }
 
 #display-area .email-header-right button:hover {
-  background-color: #a7a7a7;
+  background-color: #787878;
 }
 
 #display-area .email-header-right button:focus {
@@ -284,7 +269,7 @@ textarea {
 
 #display-area .email-body {
   padding: 50px 30px;
-  background-color: #f3f3f3;
+  background-color: #EFEFEF;
   margin-top: 20px;
   font-size: 18px;
 }
