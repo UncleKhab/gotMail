@@ -308,4 +308,17 @@ strong {
   max-height: 30vh;
   overflow-y: scroll;
 }
+
+@media (max-width: 500px) {
+  .body-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .body-container .left-nav {
+    border: none;
+    display: none;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

@@ -265,3 +265,13 @@ strong{
     max-height: 30vh;
     overflow-y: scroll;
 }
+
+@media (max-width:500px){
+    .body-container{
+        flex-direction:column;
+        .left-nav{
+            border:none;
+            display:none;
+        }
+    }
+}
