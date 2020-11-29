@@ -1,26 +1,39 @@
 export function createEmailsList(emailsArray, mailbox){
-    let emailContainer = document.querySelector("#display-area")
-    let title = document.querySelector('#list-title').firstChild;
-    let unreadCount = 0;
-    
+    let emailContainer = document.querySelector("#list-body")
     let retString = emailsArray.map(item => {
-        let emailItemClasses ="email-item opened"
-        let emailDisplayName = mailbox === "sent" ? item.recipients : item.sender;
-        // let emailItemClasses = item.read ? "email-item opened" : {unreadCount++; return "email-item"};
-        if(!item.read && mailbox ==="inbox"){
-            emailItemClasses = "email-item"
-            unreadCount++
-        }
+        let emailDisplayName = item.sender;
+        let firstChar = emailDisplayName[0].toUpperCase()
 
-        return(
-            `<li class="${emailItemClasses}" data-id=${item.id} data-mailbox=${mailbox} id=${item.id}>
-                <p class="email-item-name">${emailDisplayName}</p>
-                <p class="email-item-subject">${item.subject}</p>
-                <p class="email-item-date">${item.timestamp}</p>    
-            </li>`
+        return(`<div class="item" data-id=${item.id} data-mailbox=${mailbox} id=${item.id}>
+                    <div class="item-background"></div>
+                    <div class="item-side-bar"></div>
+                    <div class="item-container">
+                        <div class="user">
+                            <div class="user-background">
+                                <h2 class="user-char">${firstChar}</h2>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-content-user">
+                                <div class="details">
+                                    <small>From:</small>
+                                    <p class="details-email">${emailDisplayName}</p>
+                                </div>
+                                <div class="date">
+                                    <p>${item.timestamp}</p>
+                                </div>
+                            </div>
+                            <div class="item-content-heading">
+                                <h2>${item.subject}</h2>
+                            </div>
+                            <div class="item-content-body">
+                                <p>${item.body}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
         )
     }).join('')
-    mailbox === "inbox" ? title.innerHTML += `<span id="list-title-counter">(${unreadCount}) new</span>` : null;
-    retString = `<ul class="emails-list">` + retString + `</ul>`
+
     emailContainer.innerHTML = retString;
 }
