@@ -24,6 +24,9 @@ textarea {
 .body-container .nav-bar {
   display: block;
   width: 250px;
+  height: 100vh;
+  -webkit-box-shadow: 5px 0px 5px #b4b4b4;
+          box-shadow: 5px 0px 5px #b4b4b4;
 }
 
 .body-container .nav-bar hr {
@@ -112,6 +115,102 @@ textarea {
 .body-container .nav-bar .nav-compose #compose p {
   display: inline-block;
   font-family: "Roboto", sans-serif !important;
+}
+
+.body-container .nav-bar .nav-mailbox {
+  width: 80%;
+  margin: auto;
+  text-align: left;
+}
+
+.body-container .nav-bar .nav-mailbox h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.body-container .nav-bar .nav-mailbox-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.body-container .nav-bar .nav-mailbox-buttons .nav-mailbox-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.body-container .nav-bar .nav-mailbox-buttons .nav-mailbox-button:focus {
+  outline: none;
+}
+
+.body-container .nav-bar .nav-mailbox-buttons .nav-mailbox-button:hover {
+  color: #217CF2;
+}
+
+.body-container .nav-bar .nav-mailbox-buttons .nav-mailbox-button-background {
+  position: absolute;
+  background-color: #ABCBF5;
+  width: 0%;
+  height: 100%;
+  z-index: 100;
+  left: -20%;
+  border-radius: 10px;
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+  -webkit-box-shadow: 3px 1px 5px 1px #0000002e;
+          box-shadow: 3px 1px 5px 1px #0000002e;
+}
+
+.body-container .nav-bar .nav-mailbox-buttons .nav-mailbox-button-background-small {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background-color: #217CF2;
+  border-radius: 10px;
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+}
+
+.body-container .nav-bar .nav-mailbox-buttons .nav-mailbox-button img {
+  width: 30px;
+  margin-right: 20px;
+  z-index: 200;
+}
+
+.body-container .nav-bar .nav-mailbox-buttons .nav-mailbox-button p {
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 200;
+}
+
+.body-container .nav-bar-footer {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.body-container .nav-bar-footer a {
+  text-decoration: none;
+  color: #242424;
+}
+
+.body-container .nav-bar-footer a:hover {
+  color: #BFBFBF;
 }
 
 .body-container #emails-view {

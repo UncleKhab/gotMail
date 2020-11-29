@@ -19,18 +19,29 @@
             </div>
             <div class="nav-mailbox">
                 <h2>Mailbox</h2>
-                <button class="nav-mailbox-button" id="inbox">
-                    <img src="{% static 'mail/icons/inbox-24px.svg' %}">
-                    <p>Inbox</p>
-                </button>
-                <button class="nav-mailbox-button" id="sent">
-                    <img src="{% static 'mail/icons/send-24px.svg' %}">
-                    <p>Sent</p>
-                </button>
-                <button class="nav-mailbox-button" id="archive">
-                    <img src="{% static 'mail/icons/archive-24px.svg' %}">
-                    <p>Archive</p>
-                </button>
+                <div class="nav-mailbox-buttons">
+                    <button class="nav-mailbox-button" id="inbox">
+                        <div class="nav-mailbox-button-background">
+                            <div class="nav-mailbox-button-background-small"></div>
+                        </div>
+                        <img src="{% static 'mail/icons/inbox-24px.svg' %}">
+                        <p>Inbox</p>
+                    </button>
+                    <button class="nav-mailbox-button" id="sent">
+                        <div class="nav-mailbox-button-background">
+                            <div class="nav-mailbox-button-background-small"></div>
+                        </div>
+                        <img src="{% static 'mail/icons/send-24px.svg' %}">
+                        <p>Sent</p>
+                    </button>
+                    <button class="nav-mailbox-button" id="archive">
+                        <div class="nav-mailbox-button-background">
+                            <div class="nav-mailbox-button-background-small"></div>
+                        </div>
+                        <img src="{% static 'mail/icons/archive-24px.svg' %}">
+                        <p>Archive</p>
+                    </button>
+                </div>
             </div>
         </div>
         <hr>
@@ -38,7 +49,14 @@
             <a href="{% url 'logout' %}">Logout</a>
         </div>
     </div>
-        
+    <div class="list-view">
+        <div class="list-title">
+            <h2>Inbox</h2>
+        </div>
+        <div class="list-body">
+            
+        </div>
+    </div>
     
 
     <div id="emails-view">

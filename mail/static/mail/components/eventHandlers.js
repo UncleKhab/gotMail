@@ -44,9 +44,15 @@ export function handleMailBoxChange(mailbox){
   document.querySelector('#list-title').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>` ;
 }
 
-export function handleMailboxButtonChange(button_id, req){
+function handleMailboxButtonChange(mailbox){
     // Changes The Button Status
-    const activeNow = document.querySelector(".active") || null
-    activeNow ? activeNow.classList.remove("active") : null
-    req === "add" ? document.getElementById(button_id).classList.add("active") : null;
+    let allButtonsBackground = document.querySelectorAll(".nav-mailbox-button-background")
+    allButtonsBackground.forEach(item => {
+      item.style.width = "0%"
+      item.firstElementChild.style.width = "0%"
+    })
+    let buttonBackground = document.querySelector(`#${mailbox}`).firstElementChild;
+    buttonBackground.style.width = "120%"
+    buttonBackground.firstElementChild.style.width = "33%"
 }
+

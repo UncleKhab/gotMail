@@ -33,6 +33,8 @@ export function load_mailbox(mailbox) {
   // Show the mailbox name
   
   handleMailBoxChange(mailbox)
-  
-  
+
+  // width: 120%;
+  // width: 33%;
 }
+
