@@ -8,11 +8,11 @@ function removeMultipleEventListeners(selector, event, callback){
 }
 
 function listEventListeners(){
-    addMultipleEventListeners(".email-item", 'click', handleOpenEmail)
+    addMultipleEventListeners(".item", 'click', handleOpenEmail)
   }
 function singleEventListeners(){
-    addMultipleEventListeners(".archive-btn", "click", handleArchiveEmail)
-    addMultipleEventListeners(".reply-btn", "click", handleReplyToEmail)
+    addMultipleEventListeners(".detail-archive", "click", handleArchiveEmail)
+    addMultipleEventListeners(".detail-reply", "click", handleReplyToEmail)
 }
 
 export {removeMultipleEventListeners,

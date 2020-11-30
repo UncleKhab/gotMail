@@ -14,17 +14,17 @@ export function handleOpenEmail(e){
     let email = e.currentTarget;
     let email_id = email.getAttribute("id")
     let mailbox = email.getAttribute("data-mailbox")
-    removeMultipleEventListeners(".email-item", 'click', handleOpenEmail)
-    handleMailboxButtonChange(0, "remove")
     getRequestFromApi(email_id, createEmailDetailView, singleEventListeners, mailbox)
     putRequestToApi(email_id, {read:true})
   }
 
 export function handleArchiveEmail(e){
-    let email_id = e.target.getAttribute("data-id")
-    let action = e.target.innerText;
-    let obj = action === "Archive" ? {archived:true} : {archived:false}
+
+    let email_id = e.currentTarget.getAttribute("data-id")
+    let action = e.currentTarget.innerText;
+    let obj = action === "archive" ? {archived:true} : {archived:false}
     putRequestToApi(email_id, obj, loadMailBoxInCallback)
+    document.querySelector("#emails-view").innerHTML = ""
     
 }
 function loadMailBoxInCallback(){

@@ -245,6 +245,11 @@ textarea {
   height: 180px;
   background-color: #FEFEFE;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.body-container .list-view .list-body .item:hover {
+  border: 1px solid #581Ab7;
 }
 
 .body-container .list-view .list-body .item-background {
@@ -290,6 +295,7 @@ textarea {
 
 .body-container .list-view .list-body .item-content {
   width: 90%;
+  min-width: 90%;
   height: 100%;
 }
 
@@ -342,5 +348,148 @@ textarea {
   font-size: 12px;
   height: 90%;
   overflow: hidden;
+}
+
+.body-container #emails-view {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.body-container .detail-container {
+  width: 90%;
+  margin: auto;
+  background-color: #EFEFEF;
+  margin-top: 5vh;
+}
+
+.body-container .detail-container .detail-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.body-container .detail-container .detail-content .left {
+  min-width: 90px;
+  max-width: 90px;
+  padding: 10px;
+}
+
+.body-container .detail-container .detail-content .left .detail-userchar div {
+  background-color: #946ece;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.body-container .detail-container .detail-content .left .detail-userchar p {
+  line-height: 0.8;
+  color: #FEFEFE;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.body-container .detail-container .detail-content .left .detail-buttons {
+  margin-top: 20px;
+}
+
+.body-container .detail-container .detail-content .left .detail-buttons button {
+  display: block;
+  width: 100%;
+  border: none;
+  font-size: 13px;
+  font-weight: bold;
+  color: #FEFEFE;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.body-container .detail-container .detail-content .left .detail-buttons button:focus {
+  outline: none;
+}
+
+.body-container .detail-container .detail-content .left .detail-buttons button img {
+  height: 40px;
+}
+
+.body-container .detail-container .detail-content .left .detail-buttons .detail-archive {
+  background-color: #00a407;
+}
+
+.body-container .detail-container .detail-content .left .detail-buttons .detail-archive:hover {
+  background-color: #07ce11;
+}
+
+.body-container .detail-container .detail-content .left .detail-buttons .detail-reply {
+  background-color: #ff8100;
+}
+
+.body-container .detail-container .detail-content .left .detail-buttons .detail-reply:hover {
+  background-color: #ffa041;
+}
+
+.body-container .detail-container .detail-content .right {
+  padding: 10px 0;
+}
+
+.body-container .detail-container .detail-content .right .right-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 10px;
+}
+
+.body-container .detail-container .detail-content .right .right-header .users {
+  width: 70%;
+}
+
+.body-container .detail-container .detail-content .right .right-header .users small {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.body-container .detail-container .detail-content .right .right-header .users p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.body-container .detail-container .detail-content .right .right-header .date {
+  width: 30%;
+}
+
+.body-container .detail-container .detail-content .right .right-header .date p {
+  text-align: right;
+}
+
+.body-container .detail-container .detail-content .right .right-title {
+  margin: 40px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.body-container .detail-container .detail-content .right .right-body p {
+  white-space: pre-line;
 }
 /*# sourceMappingURL=styles.css.map */
