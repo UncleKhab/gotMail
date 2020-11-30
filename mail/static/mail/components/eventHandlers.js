@@ -8,7 +8,7 @@ import {singleEventListeners,
 import {createEmailsList} from "./createEmailsList.js"
 import {formReplyFill} from "./formReplyFill.js"
 import {handleSubmit} from "./formHandler.js"
-
+import {alertDisplay} from "./alertDisplay.js"
 
 export function handleOpenEmail(e){
     let email = e.currentTarget;
@@ -23,10 +23,14 @@ export function handleArchiveEmail(e){
     let email_id = e.currentTarget.getAttribute("data-id")
     let action = e.currentTarget.innerText;
     let obj = action === "archive" ? {archived:true} : {archived:false}
+    let msg = action === "archive" ? "Archived" : "Unarchived"
     putRequestToApi(email_id, obj, loadMailBoxInCallback)
     document.querySelector("#emails-view").innerHTML = ""
+    alertDisplay("message", `Email ${msg} Succesfully!`)
     
 }
+
+
 function loadMailBoxInCallback(){
   load_mailbox('inbox')
 }

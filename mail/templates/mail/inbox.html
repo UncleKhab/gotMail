@@ -4,10 +4,13 @@
 {% block body %}
  
 <div class="body-container">
+    <div class="alert">
+        <h2>Message Sent Succesfully!</h2>
+    </div>
     <div class="nav-bar">
         <div class="nav-bar-user">
             <div class="nav-bar-user-char"><p id="user-char">U</p></div>
-            <div class="nav-bar-user-name"><p id="user-name">Username</p></div>
+            <div class="nav-bar-user-name"><p id="user-name">{{ request.user.email }}</p></div>
         </div>
         <hr>
         <div class="nav">
@@ -61,8 +64,7 @@
         
     </div>
 
-    <div id="emails-view">
-            
+    <div id="emails-view">     
     </div>
 
     
@@ -81,10 +83,10 @@
                 To: <input id="compose-recipients" class="form-control" name="recipients">
             </div>
             <div class="form-group">
-                <input class="form-control" id="compose-subject" placeholder="Subject" name="subject">
+                Subject:<input class="form-control" id="compose-subject" placeholder="Subject" name="subject">
             </div>
-            <textarea class="form-control" id="compose-body" placeholder="Body" name="body"></textarea>
-            <input type="submit" class="btn btn-primary" value="Send"/>
+                Body: <textarea class="form-control" id="compose-body" placeholder="Body" name="body"></textarea>
+            <input type="submit" class="form-send" value="Send"/>
         </form>
     </div>
 {% endblock %}

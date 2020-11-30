@@ -1,7 +1,7 @@
 function emailFormatter(email, mailbox){
     let firstChar = email.sender[0].toUpperCase();
     let buttons = mailboxCheck(email, mailbox)
-    
+    document.getElementById(`${email.id}`).classList.add("read");
     return `
     <div class="detail-container">
       <div class="detail-content">
@@ -20,7 +20,7 @@ function emailFormatter(email, mailbox){
                   <div class="users">
                       <div class="users-from">
                           <small>From:</small>
-                          <p>${email.sender}</p>
+                          <p id="email-sender">${email.sender}</p>
                       </div>
                       <div class="users-to">
                           <small>To:</small>
@@ -28,14 +28,14 @@ function emailFormatter(email, mailbox){
                       </div>
                   </div>
                   <div class="date">
-                      <p>${email.timestamp}</p>
+                      <p id="email-date">${email.timestamp}</p>
                   </div>
               </div>
               <div class="right-title">
-                  <h2>${email.subject}</h2>
+                  <h2 id="email-subject">${email.subject}</h2>
               </div>
               <div class="right-body">
-                  <p>${email.body}</p>
+                  <p id="email-body">${email.body}</p>
               </div>
           </div>
       </div>
@@ -54,13 +54,14 @@ function mailboxCheck(email, mailbox){
   }
   else{
     let archived = email.archived ? "unarchive" : "archive";
+    let archivedIcon = email.archived? "unarchive-white.svg" : "archive-white.svg";
     return `
         <button class="detail-archive" data-id="${email.id}">
-            <img src="/static/mail/icons/archive-24px.svg"/>
+            <img src="/static/mail/icons/${archivedIcon}"/>
             <p>${archived}</p>
         </button>
         <button class="detail-reply" data-id="${email.id}">
-            <img src="/static/mail/icons/reply-24px.svg"/>
+            <img src="/static/mail/icons/reply-white.svg"/>
             <p>reply</p>
         </button>`
   }

@@ -3,8 +3,8 @@ export function createEmailsList(emailsArray, mailbox){
     let retString = emailsArray.map(item => {
         let emailDisplayName = item.sender;
         let firstChar = emailDisplayName[0].toUpperCase()
-
-        return(`<div class="item" data-id=${item.id} data-mailbox=${mailbox} id=${item.id}>
+        let classesList = item.read ? "item read" : "item";
+        return(`<div class="${classesList}" data-id=${item.id} data-mailbox=${mailbox} id=${item.id}>
                     <div class="item-background"></div>
                     <div class="item-side-bar"></div>
                     <div class="item-container">

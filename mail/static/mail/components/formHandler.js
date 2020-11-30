@@ -1,4 +1,5 @@
 import {load_mailbox} from "../inbox.js"
+import { alertDisplay } from "./alertDisplay.js";
 
 export function handleSubmit(e){
     // retrieves data from the submitted form
@@ -12,7 +13,6 @@ export function retrieveFormData(){
     const recipients = document.getElementById("compose-recipients").value
     const subject = document.getElementById("compose-subject").value
     const body = document.getElementById("compose-body").value
-    console.log(document.getElementById("compose-body").value)
 
     return {
         recipients: recipients,
@@ -39,6 +39,11 @@ fetch('/emails', {
 })
 .then(response => {
     // TODO -> Beatufy the display of Error or Message
-    status === 201 ? load_mailbox('sent') : alert(response.error)
+    if (status === 201){
+        load_mailbox('sent')
+        alertDisplay("message", response.message)
+    }else{
+        alertDisplay("error", response.error);
+    }
 });
 }

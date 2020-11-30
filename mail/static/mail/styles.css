@@ -21,6 +21,27 @@ textarea {
   display: flex;
 }
 
+.body-container .alert {
+  position: absolute;
+  z-index: 100000;
+  margin: auto;
+  left: 40%;
+  padding: 30px;
+  border-radius: 20px;
+  top: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+
+.body-container .alert-message {
+  background-color: #bcf42494;
+}
+
+.body-container .alert-error {
+  background-color: #f025007a;
+}
+
 .body-container .nav-bar {
   display: block;
   min-width: 250px;
@@ -239,6 +260,18 @@ textarea {
   background-color: #EFEFEF;
 }
 
+.body-container .list-view .list-body .read .item-background {
+  background-color: #BFBFBF;
+}
+
+.body-container .list-view .list-body .read .item-side-bar {
+  background-color: #787878;
+}
+
+.body-container .list-view .list-body .read .item-content-heading {
+  color: #878787;
+}
+
 .body-container .list-view .list-body .item {
   position: relative;
   width: 100%;
@@ -324,7 +357,7 @@ textarea {
 }
 
 .body-container .list-view .list-body .item-content-heading {
-  font-size: 18px;
+  font-size: 14px;
   color: #00A2B5;
 }
 
@@ -348,12 +381,17 @@ textarea {
   font-size: 12px;
   height: 90%;
   overflow: hidden;
+  white-space: pre-line;
 }
 
 .body-container #emails-view {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  display: block;
+  overflow-y: scroll;
+  height: 100vh;
+  padding-bottom: 50px;
 }
 
 .body-container .detail-container {
@@ -449,6 +487,7 @@ textarea {
 
 .body-container .detail-container .detail-content .right {
   padding: 10px 0;
+  width: 90%;
 }
 
 .body-container .detail-container .detail-content .right .right-header {
@@ -491,5 +530,91 @@ textarea {
 
 .body-container .detail-container .detail-content .right .right-body p {
   white-space: pre-line;
+}
+
+.body-container .detail-container .detail-content .right .right-body p small {
+  font-weight: bold;
+}
+
+.body-container #compose-view {
+  display: block;
+  position: absolute;
+  z-index: 2000;
+  right: 20px;
+  bottom: 20px;
+  background-color: lightgray;
+  width: 50%;
+  font-size: 20px;
+  -webkit-box-shadow: -6px -4px 18px 0px #00000069;
+          box-shadow: -6px -4px 18px 0px #00000069;
+}
+
+.body-container #compose-view .form-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  background-color: #581Ab7;
+  color: #FEFEFE;
+}
+
+.body-container #compose-view .form-title #close-form {
+  font-weight: bold;
+  font-size: 24px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.body-container #compose-view #compose-form {
+  padding: 10px;
+}
+
+.body-container #compose-view #compose-form .form-group input {
+  width: 100%;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.body-container #compose-view #compose-form textarea {
+  width: 100%;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.body-container #compose-view #compose-form .form-send {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FEFEFE;
+  width: 100%;
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 0px 5px #0000001f;
+          box-shadow: 5px 0px 5px #0000001f;
+  background-color: #217CF2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+}
+
+.body-container #compose-view #compose-form .form-send:focus {
+  outline: none;
+}
+
+.body-container #compose-view #compose-form .form-send:hover {
+  background-color: #64A2F2;
 }
 /*# sourceMappingURL=styles.css.map */

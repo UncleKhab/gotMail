@@ -41,6 +41,25 @@ textarea {
 
 .body-container{
     display:flex;
+
+
+    .alert{
+        position: absolute;
+        z-index: 100000;
+        margin: auto;
+        left: 40%;
+        padding: 30px;
+        border-radius: 20px;
+        top: 10px;
+        opacity:0;
+        transition: opacity 0.3s ease-in;
+        &-message{
+            background-color:#bcf42494;
+        }
+        &-error{
+            background-color:#f025007a;
+        }
+    }
     .nav-bar{
         display:block;
         min-width:250px;
@@ -212,6 +231,17 @@ textarea {
             padding:20px;
             height:90vh;
             background-color: $light-gray;
+            .read{
+                .item-background{
+                    background-color:$medium-gray;
+                }
+                .item-side-bar{
+                    background-color:$dark-gray;
+                }
+                .item-content-heading{
+                    color: #878787;
+                }
+            }
             .item{
                 position:relative;
                 width:100%;
@@ -223,6 +253,7 @@ textarea {
                     border: 1px solid $primary;
                 }
                 &-background{
+                    
                     background-color: $off-white;
                     width:100%;
                     height:100%;
@@ -253,6 +284,7 @@ textarea {
                         padding: 15px;
                         border-radius: 100%;
                         margin: 5px;
+                        
                     }
                 }
                 &-content{
@@ -282,7 +314,7 @@ textarea {
                         }
                     }
                     &-heading{
-                        font-size:18px;
+                        font-size:14px;
                         color: $secondary-pale;
                        h2{
                         box-sizing: border-box;
@@ -301,6 +333,7 @@ textarea {
                             font-size:12px;
                             height:90%;
                             overflow:hidden;
+                            white-space:pre-line;
                         }
                     }
                 }
@@ -309,6 +342,10 @@ textarea {
     }
     #emails-view{
         flex:1;
+        display: block;
+        overflow-y: scroll;
+        height: 100vh;
+        padding-bottom: 50px;
     }
     .detail-container{
         width:90%;
@@ -380,6 +417,7 @@ textarea {
             }
             .right{
                 padding: 10px 0;
+                width:90%;
                 .right-header{
                     display: flex;
                     justify-content: space-between;
@@ -410,12 +448,77 @@ textarea {
                 .right-body{
                     p{
                         white-space: pre-line;
+                        small{
+                            font-weight:bold;
+                        }
                     }
                 }
             }
         }
     }
-       
+    #compose-view{
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        right: 20px;
+        bottom: 20px;
+        background-color: lightgray;
+        width: 50%;
+        font-size: 20px;
+        box-shadow: -6px -4px 18px 0px #00000069;
+        .form-title{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: $primary;
+            color:$off-white;
+            #close-form{
+                font-weight:bold;
+                font-size:24px;
+                padding-right:10px;
+                cursor: pointer;
+            }
+        }
+        #compose-form{
+            padding:10px;
+            .form-group{
+                input{
+                    width: 100%;
+                    font-size: 20px;
+                    padding: 0 10px;
+                }
+            }
+            textarea{
+                width: 100%;
+                font-size: 20px;
+                padding: 0 10px;
+            }
+            .form-send{
+                    
+                font-size: 20px;
+                font-weight: bold;
+                color: $off-white;
+                width: 100%;
+                border: none;
+                padding: 5px;
+                border-radius: 10px;
+                box-shadow: 5px 0px 5px #0000001f;
+                background-color: $secondary;
+                display:flex;
+                justify-content:center;
+                align-items: center;
+                cursor: pointer;
+                transition: background-color 0.2s ease-in;
+                &:focus{
+                    outline:none;
+                }
+                &:hover{
+                    background-color:$secondary-gray-pale;
+                }
+            }
+        }
+    }   
 }
 
 

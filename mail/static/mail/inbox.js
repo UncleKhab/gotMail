@@ -12,6 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Other Event Listeners
   document.querySelector("#close-form").addEventListener('click', () => document.querySelector('#compose-view').style.display = 'none')
+
+  // Setting user Profile
+  let currentUser = document.querySelector('#user-name').innerText
+  document.querySelector('#user-char').innerText = currentUser[0].toUpperCase();
+  
   // By default, load the inbox
   load_mailbox('inbox');
 });
