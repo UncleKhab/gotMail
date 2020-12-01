@@ -1,3 +1,40 @@
+.my-container {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  margin-top: 20vh;
+}
+
+.my-container h2 {
+  font-size: 40px;
+}
+
+.my-container div {
+  width: 70%;
+  margin: 10px auto;
+}
+
+.my-container div input {
+  font-size: 20px;
+  width: 100%;
+}
+
+.my-container .btn {
+  width: 50%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #217CF2;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #FEFEFE;
+}
+
+.my-container .btn:hover {
+  background-color: #64A2F2;
+}
+
 *, body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -64,6 +101,8 @@ textarea {
   background-color: #581Ab7;
   display: inline-block;
   padding: 15px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   -webkit-box-shadow: 5px 1px 3px 0px #00000038;
           box-shadow: 5px 1px 3px 0px #00000038;
@@ -258,6 +297,12 @@ textarea {
   padding: 20px;
   height: 90vh;
   background-color: #EFEFEF;
+}
+
+.body-container .list-view .list-body .no-message {
+  font-size: 20px;
+  color: #787878;
+  text-align: center;
 }
 
 .body-container .list-view .list-body .read .item-background {

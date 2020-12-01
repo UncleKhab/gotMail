@@ -34,6 +34,6 @@ export function createEmailsList(emailsArray, mailbox){
                 </div>`
         )
     }).join('')
-
+    emailsArray.length === 0 ? retString = `<h2 class="no-message">It looks like you dont have any ${mailbox} messages</h2>` : null;
     emailContainer.innerHTML = retString;
 }

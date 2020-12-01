@@ -16,12 +16,37 @@ $secondary-pale: #00A2B5;
 $secondary:#217CF2;
 
 
-$small-font-size: 14px;
-$medium-font-size: 18px;
-$regular-font-size:24px;
-$big-font-size:30px;
-$small-header-font-size: 42px;
-$big-header-font-size: 60px;
+.my-container{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-top: 20vh;
+    h2{
+        font-size:40px;
+    }
+    div{
+        width: 70%;
+        margin: 10px auto;
+        input{
+            font-size: 20px;
+            width: 100%;
+        }
+    }
+    .btn{
+        width:50%;
+        padding:10px;
+        font-size:20px;
+        background-color:$secondary;
+        border: none;
+        border-radius:10px;
+        font-weight: bold;
+        cursor: pointer;
+        color:$off-white;
+        &:hover{
+            background-color:$secondary-gray-pale;
+        }
+    }
+}
 
 
 *, body{
@@ -76,6 +101,8 @@ textarea {
                 background-color:$primary;
                 display:inline-block;
                 padding: 15px;
+                width:60px;
+                height:60px;
                 border-radius: 50%;
                 box-shadow: 5px 1px 3px 0px #00000038;
                 cursor: pointer;
@@ -231,6 +258,11 @@ textarea {
             padding:20px;
             height:90vh;
             background-color: $light-gray;
+            .no-message{
+                font-size: 20px;
+                color: $dark-gray;
+                text-align: center;
+            }
             .read{
                 .item-background{
                     background-color:$medium-gray;
