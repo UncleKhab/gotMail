@@ -24,8 +24,9 @@ function bodyFormatter(){
     let sender = document.querySelector("#email-sender").innerText;
     let date = document.querySelector("#email-date").innerText;
     let prevReply = document.querySelector("#email-body").innerHTML.split("</small>")[0].split(">")[1];
+    console.log(prevReply)
+    if(prevReply !== undefined){
     let nextReply = document.querySelector("#email-body").innerHTML.split("</small>")[1].trim();
-    if(prevReply !== undefined && nextReply !== undefined){
         return`<small class="reply"> 
     ${prevReply}
     -------------------------on ${date} : ${sender} wrote:
